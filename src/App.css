@@ -1,0 +1,188 @@
+/* Reset & base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+body.light {
+  background-color: #f0f0f0;
+}
+
+/* App container */
+.App {
+  width: 90%;
+  max-width: 520px;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #000;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* Dark mode */
+.App.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.App.dark input,
+.App.dark .filter-buttons button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+}
+
+.App.dark button {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+.App.dark .todo-item {
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.App.dark .all-tasks-view h4 {
+  color: #90caf9;
+}
+
+/* Controls */
+button {
+  cursor: pointer;
+}
+
+.top-buttons,
+.date-picker,
+.calendar-toggle {
+  margin-bottom: 10px;
+}
+
+.date-picker input {
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+/* Todo input section */
+.todo-input,
+.search-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.todo-input input,
+.search-input input {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.todo-input button {
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+/* Filter buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.filter-buttons button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 1px solid #aaa;
+  background-color: #ffffff; /* light mode */
+  color: #333;
+}
+
+.App.dark .filter-buttons button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+}
+
+/* Todo List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+}
+
+.todo-item input[type='text'] {
+  flex: 1;
+  padding: 6px;
+  font-size: 15px;
+  margin: 0 10px;
+}
+
+.todo-text {
+  flex: 1;
+  margin-left: 10px;
+  text-align: left;
+}
+
+/* Calendar & Past Tasks */
+.calendar-overview,
+.all-tasks-view {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.calendar-overview ul,
+.all-tasks-view ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.all-tasks-view h4 {
+  margin-bottom: 5px;
+  color: #0077cc;
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+  .todo-input,
+  .search-input,
+  .filter-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .todo-input input,
+  .search-input input,
+  .todo-input button {
+    width: 100%;
+  }
+}
